@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 @SpringBootApplication
 public class RegescApplication implements CommandLineRunner {
-	private ProfessorService professorService;
-    private DisciplineService disciplineService;
+	final private ProfessorService professorService;
+    final private DisciplineService disciplineService;
 
 	public RegescApplication(ProfessorService professorService, DisciplineService disciplineService) {
 
@@ -19,12 +19,10 @@ public class RegescApplication implements CommandLineRunner {
 		this.disciplineService = disciplineService;
 	}
 
-	public static void main(String[] args) {
-		SpringApplication.run(RegescApplication.class, args);
-	}
+	public static void main(String[] args) { SpringApplication.run(RegescApplication.class, args); }
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		Scanner scanner = new Scanner(System.in);
 			boolean isTrue = true;
 			while (isTrue) {
